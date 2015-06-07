@@ -1,0 +1,23 @@
+{
+  "name": "cpp-addon-algorithms",
+  "version": "0.0.0",
+  "description": "Implementation of some algorithms of the 'Introduction to Algorithms, 3rd Edition' book.",
+  "main": "index.js",
+  "scripts": {
+    "gyp": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vinimdocarmo/cpp-addons-algorithms.git"
+  },
+  "author": "Vinícius do Carmo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinimdocarmo/cpp-addons-algorithms/issues"
+  },
+  "homepage": "https://github.com/vinimdocarmo/cpp-addons-algorithms",
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^1.8.4"
+  }
+}
