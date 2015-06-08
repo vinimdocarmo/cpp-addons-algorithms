@@ -1,26 +1,27 @@
 #include <nan.h>
 #include <iostream>
+#include "./src/algorithms/sort/sort.h"
 
 using namespace v8;
 using namespace std;
 
-template<class T> T concat(T a, T b); 
+NAN_METHOD(InsertionSort) {
+   
+   if(args.Length() == 0) {
+      NanThrowTypeError("Wrong number of arguments");
+      NanReturnUndefined();
+   }
 
-NAN_METHOD(Hello) {
-   string hello = "Hello,";
-   string world = " World!";
+   NanScope();
+   Local<Array> arr = args[0].As<Array>();
 
-   cout << concat(hello, world) << endl;
-
-   NanReturnUndefined();
+   insertionSort(arr);
+   
+   NanReturnValue(NanNew(Array::New()));
 }
 
 void Init(Handle<Object> exports) {
-   exports->Set(NanNew("hello"), NanNew<FunctionTemplate>(Hello)->GetFunction());
+   exports->Set(NanNew("insertionSort"), NanNew<FunctionTemplate>(InsertionSort)->GetFunction());
 }
 
 NODE_MODULE(algorithms, Init);
-
-template<class T> T concat(T a, T b) {
-   return a + b;
-}

@@ -1,3 +1,3 @@
 var algorithms = require('bindings')('algorithms');
 
-algorithms.hello();
+algorithms.insertionSort([]);
