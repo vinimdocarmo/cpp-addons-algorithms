@@ -6,8 +6,9 @@ void insertionSort(Local<Array>& array) {
 
    Local<Value> key;
    int j, i;
+   uint32_t len;
 
-   for(j = 1; j <= (int)array->Length() - 1; j++) {
+   for(j = 1, len = array->Length(); j <= len - 1; j++) {
       key = array->Get(j);
       i = j - 1;
       while(i >= 0 && array->Get(i)->NumberValue() > key->NumberValue()) {
