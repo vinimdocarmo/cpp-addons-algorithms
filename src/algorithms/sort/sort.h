@@ -3,5 +3,6 @@
 
 using namespace v8;
 
-Local<Array> insertionSort(Local<Array>& arr);
+void insertionSort(Local<Array>& array);
 
+NAN_METHOD(InsertionSort);
