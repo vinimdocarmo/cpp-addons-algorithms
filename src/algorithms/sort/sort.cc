@@ -20,6 +20,10 @@ void insertionSort(Local<Array>& array) {
 
 }
 
+void selectionSort(Local<Array>& array) {
+
+}
+
 NAN_METHOD(InsertionSort) {
    
    if(args.Length() == 0) {
@@ -34,5 +38,20 @@ NAN_METHOD(InsertionSort) {
    
    NanReturnValue(array);
 
+}
+
+NAN_METHOD(SelectionSort) {
+   
+   if(args.Length() == 0) {
+      NanThrowTypeError("Wrong number of arguments");
+      NanReturnUndefined();
+   }
+
+   NanScope();
+   Local<Array> array = args[0].As<Array>();
+
+   selectionSort(array);
+
+   NanReturnValue(array);
 }
 
